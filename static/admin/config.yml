@@ -10,16 +10,16 @@ collections:
     label: "Project" # Used in the UI
     folder: "_posts/Project" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
-    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    slug: "{{slug}}" # Filename template, e.g., title.md
     fields: # The fields for each document, usually in front matter
       - { label: "Layout", name: "layout", widget: "hidden", default: "Project" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Featured Image", name: "thumbnail", widget: "image" }
-      - { label: "Body", name: "body", widget: "markdown" }
       - label: "Images Gallery"
         name: "imagesGallery"
         widget: 'list'
         fields:
-          - { label: "image 1", name: "image1", widget: "image" }
-          - { label: "image 2", name: "image2", widget: "image" }
+          - { label: "image", name: "image", widget: "image" }
+      - { label: "Special Project", name: "specialProject", widget: "boolean", default: false }
+      - { label: "Body", name: "body", widget: "markdown" }
