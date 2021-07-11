@@ -2,20 +2,20 @@ backend:
   name: git-gateway
   branch: master # Branch to update (optional; defaults to master)
 
-media_folder: "images/uploads" # Media files will be stored in the repo under images/uploads
-public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
+media_folder: "src/images/uploads/" # Media files will be stored in the repo under images/uploads
+public_folder: "../../images/uploads/" # The src attribute for uploaded media will begin with /images/uploads
 
 collections:
   - name: "project" # Used in routes, e.g., /admin/collections/blog
     label: "Project" # Used in the UI
-    folder: "_posts/Project" # The path to the folder where the documents are stored
+    folder: "src/markdown/projects" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., title.md
     fields: # The fields for each document, usually in front matter
-      - { label: "Layout", name: "layout", widget: "hidden", default: "Project" }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Featured Image", name: "thumbnail", widget: "image" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "Project", required: true }
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: "Publish Date", name: "date", widget: "datetime", required: true }
+      - { label: "Featured Image", name: "thumbnail", widget: "image", required: true }
       - label: "Images Gallery"
         name: "imagesGallery"
         widget: 'list'
@@ -23,3 +23,24 @@ collections:
           - { label: "image", name: "image", widget: "image" }
       - { label: "Special Project", name: "specialProject", widget: "boolean", default: false }
       - { label: "Body", name: "body", widget: "markdown" }
+      - label: "tags"
+        name: "tags"
+        widget: "list"
+        fields:
+          - { label: "tag", name: "tag", widget: "string" }
+  - name: "blog"
+    label: "Blog"
+    folder: "src/markdown/blogs"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "Blog", required: true }
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: "Publish Date", name: "date", widget: "datetime", required: true }
+      - { label: "Featured Image", name: "thumbnail", widget: "image", required: true }
+      - { label: "Body", name: "body", widget: "markdown", required: true }
+      - label: "tags"
+        name: "tags"
+        widget: "list"
+        fields:
+          - { label: "tag", name: "tag", widget: "string" }
