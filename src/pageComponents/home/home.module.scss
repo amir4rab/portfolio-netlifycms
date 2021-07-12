@@ -1,0 +1,30 @@
+@import '../../scss/styles';
+
+.homeComponent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 5vh 0;
+    .details{
+        width: 50%;
+        max-width: 50%;
+        height: 100%;
+        .about{
+            .title{
+                font-size: 4rem;
+                line-height: 125%;
+                strong {
+                    color: $acent-0;
+                    font-weight: block;
+                }
+            }
+        }
+        .links{
+        
+        }
+    }
+    .projectSliderDiv{
+        width: 50%;
+    }
+}

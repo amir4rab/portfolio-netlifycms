@@ -1,5 +1,5 @@
 import * as React from "react";
-import HomeComponent from "../components/home/home";
+import HomeComponent from "../pageComponents/home/home";
 
 const IndexPage = () => {
   return (<HomeComponent />)
