@@ -4,6 +4,12 @@ module.exports = {
     title: "portfolio",
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-layout",
+      options: {
+        component: require.resolve(`./src/layout/layout.jsx`),
+      },
+    },
     "gatsby-plugin-netlify-cms",
     "gatsby-plugin-sass",
     "gatsby-plugin-image",
