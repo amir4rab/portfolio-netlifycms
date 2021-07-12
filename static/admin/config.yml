@@ -26,8 +26,6 @@ collections:
       - label: "tags"
         name: "tags"
         widget: "list"
-        fields:
-          - { label: "tag", name: "tag", widget: "string" }
   - name: "blog"
     label: "Blog"
     folder: "src/markdown/blogs"
@@ -42,5 +40,3 @@ collections:
       - label: "tags"
         name: "tags"
         widget: "list"
-        fields:
-          - { label: "tag", name: "tag", widget: "string" }
