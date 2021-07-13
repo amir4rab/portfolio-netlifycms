@@ -1,0 +1,39 @@
+.projectSlide {
+    height: 90vh;
+    overflow: hidden;
+    position: relative;
+    .imageArea{
+        position: relative;
+        height: 80%;
+        overflow: hidden;
+        .image{
+            max-height: 80%;
+            width: 35%;
+            max-width: 200px;
+            filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.25));
+            border-radius: 1rem;
+            overflow: hidden;
+
+            position: absolute;
+            transform: 
+                translate( -50%, -50%)
+                matrix(1, 0.19, -0.01, 0.98, 0, 0);
+
+            $gapAmmount: 7.5%;
+            &:first-child{
+                top: 50% - $gapAmmount;
+                left: 50% - $gapAmmount;
+                z-index: 10;
+            }
+            &:nth-child(2){
+                top: 50% + $gapAmmount;
+                left: 50% + $gapAmmount;
+            }
+        }
+    }
+    .btn{
+        position: absolute;
+        left: 10%;
+        bottom: 10%;
+    }
+}
