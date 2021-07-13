@@ -19,10 +19,12 @@ collections:
       - label: "Images Gallery"
         name: "imagesGallery"
         widget: 'list'
-        fields:
-          - { label: "image", name: "image", widget: "image" }
+        summary: '{{fields.image}}'
+        field: {label: Image, name: image, widget: image}
       - { label: "Special Project", name: "specialProject", widget: "boolean", default: false }
       - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Github", name: "github", widget: "string", required: true }
+      - { label: "Website Address", name: "websiteAddress", widget: "string", required: true }
       - label: "tags"
         name: "tags"
         widget: "list"
