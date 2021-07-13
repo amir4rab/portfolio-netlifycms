@@ -6,14 +6,21 @@
     align-items: center;
     align-content: center;
     padding: 5vh 0;
+    height: 90vh;
     .details{
         width: 50%;
         max-width: 50%;
         height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        align-content: flex-start;
+        flex-direction: column;
         .about{
             .title{
                 font-size: 4rem;
                 line-height: 125%;
+                padding-bottom: 2rem;
                 strong {
                     color: $acent-0;
                     font-weight: block;
@@ -21,10 +28,23 @@
             }
         }
         .links{
-        
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            align-content: center;
+            .link{
+                &:not(:last-child){
+                    margin-right: 1.5rem;
+                }
+                .imgIcon {
+                    width: 3rem;
+                    height: 3rem;
+                }
+            }
         }
     }
     .projectSliderDiv{
         width: 50%;
+        height: 100%;
     }
 }
