@@ -1,0 +1,15 @@
+.projectsSlider{
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+    .inner {
+        transition: transform .3s ease-in-out;
+    }
+    position: relative;
+    .indicatorsDiv{
+        position: absolute;
+        z-index: 10;
+        bottom: 10%;
+        right: 10%;
+    }
+}
