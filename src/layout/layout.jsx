@@ -6,6 +6,7 @@ import { Link } from "gatsby";
 //** importing styles **//
 import "@fontsource/gothic-a1";
 import "@fontsource/gothic-a1/900.css";
+import "@fontsource/gothic-a1/600.css";
 import "../scss/globalStyle.scss";
 import "./layout.scss"
 
