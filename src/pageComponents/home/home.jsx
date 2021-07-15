@@ -3,8 +3,7 @@ import { Link } from 'gatsby';
 
 import * as classes from './home.module.scss';
 
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
 
 import ProjectsSlider from '../../components/projectsSlider/projectsSlider';
 import PrimaryButton from '../../components/buttons/primaryButton';
