@@ -1,5 +1,6 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import { motion } from 'framer-motion';
 
 import * as classes from './projectsSlider.module.scss';
 
@@ -9,13 +10,17 @@ import Indicators from './indicators/indicators';
 function ProjectsSlider() {
     const data = useStaticQuery(graphql`
         query ProjectsSliderFetcher {
-            allMarkdownRemark {
+            allFile(
+                filter: {sourceInstanceName: {eq: "projects"}, childMarkdownRemark: {frontmatter: {specialProject: {eq: true}}}}
+            ) {
                 nodes {
-                    frontmatter {
-                        title
-                        imagesGallery {
-                            childImageSharp {
-                                gatsbyImageData
+                    childMarkdownRemark {
+                        frontmatter {
+                            title
+                            imagesGallery {
+                                childImageSharp {
+                                    gatsbyImageData
+                                }
                             }
                         }
                     }
@@ -24,29 +29,42 @@ function ProjectsSlider() {
         }
     `);
     const [ sliderPostion, setSliderPostion ] = useState(0);
+    const [ sliderPostionProxy, setSliderPostionProxy ] = useState(0);
 
-    const setSliderPostionFn = useCallback((i) => setSliderPostion(i),[]);
+    useEffect( _ => {
+        if ( sliderPostion === sliderPostionProxy ) return;
+        const setterTimeout = setTimeout( _ => {
+            setSliderPostion(sliderPostionProxy);
+        }, 300);
+        return () => {
+            clearTimeout( setterTimeout );
+        }
+    },[ sliderPostionProxy, sliderPostion ]);
+    const setSliderPostionFn = useCallback((i) => setSliderPostionProxy(i),[]);
 
     return (
         <div className={ classes.projectsSlider }>
             <div 
                 style={{
-                    transform:`translateY(${ -90 * sliderPostion }vh)`
+                    transform:`translateY(${ -85 * sliderPostion }vh)`
                 }}
-                className={ classes.inner }
             >
                 {
-                    data.allMarkdownRemark.nodes.map(( node, i ) => 
+                    data.allFile.nodes.map(( node, i ) => 
                         <ProjectSlide 
-                            data={node.frontmatter} 
-                            key={`slide-${node.frontmatter.title}`}
-                            isActive={ i === sliderPostion }
+                            data={node.childMarkdownRemark.frontmatter} 
+                            key={`slide-${node.childMarkdownRemark.frontmatter.title}`}
+                            isActive={ i === sliderPostionProxy }
                         />)
                 }
             </div>
-            <div className={ classes.indicatorsDiv }>
-                <Indicators activeIndex={sliderPostion} len={ data.allMarkdownRemark.nodes.length } setIndex={ setSliderPostionFn } />
-            </div>
+            <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: .2, duration: 1 }}
+                className={ classes.indicatorsDiv }>
+                <Indicators activeIndex={ sliderPostionProxy } len={ data.allFile.nodes.length } setIndex={ setSliderPostionFn } />
+            </motion.div>
         </div>
     )
 }

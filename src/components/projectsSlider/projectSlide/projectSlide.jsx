@@ -41,10 +41,7 @@ function ProjectSlide({ data, isActive }) {
     useEffect(_ => {
         let animationTimeOut;
         if ( isActive ) {
-            animationControls.start('hidden');
-            animationTimeOut = setTimeout(_ => {
-                animationControls.start('visble')
-            }, 50);
+            animationControls.start('visble');
         } else {
             animationControls.start('hidden');
         }
@@ -55,7 +52,7 @@ function ProjectSlide({ data, isActive }) {
 
     return (
         <div className={ classes.projectSlide }>
-            <motion.div animate={ animationControls } variants={phototsAnimationVarients} className={ classes.imageArea }>
+            <motion.div animate={ animationControls } initial={ 'hidden' } variants={phototsAnimationVarients} className={ classes.imageArea }>
                 { 
                     data.imagesGallery.map((image, i) => 
                         <GatsbyImage 
@@ -67,7 +64,7 @@ function ProjectSlide({ data, isActive }) {
                     )
                 }
             </motion.div>
-            <motion.div animate={ animationControls } variants={buttonAnimationsVarients} className={ classes.btn }>
+            <motion.div animate={ animationControls } initial={ 'hidden' } variants={buttonAnimationsVarients} className={ classes.btn }>
                 <ButtonSecondary>
                     Go to Project
                 </ButtonSecondary>
