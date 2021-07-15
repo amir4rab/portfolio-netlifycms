@@ -48,6 +48,14 @@ module.exports = {
       __key: "projects",
     },
     {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "terminalContents",
+        path: `${__dirname}/src/markdown/terminalContents/`,
+      },
+      __key: "terminalContents",
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         footnotes: true,
