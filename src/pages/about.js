@@ -1,11 +1,8 @@
 import React from 'react';
+import AboutComponent from '../pageComponents/about/about';
 
 function AboutPage() {
-    return (
-        <div>
-            About
-        </div>
-    );
+    return <AboutComponent />;
 };
 
 export default AboutPage;
