@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { memo } from 'react';
 import * as classes from './terminal.module.scss';
 import { useStaticQuery, graphql } from 'gatsby';
 
 const randomizer = (inputArr) => inputArr[Math.floor(Math.random() * inputArr.length)];
 
-function TerminalComponent() {
+const TerminalComponent = memo(() => {
     const data = useStaticQuery(graphql`
         query TerminalContentsQuery {
             allFile(filter: {sourceInstanceName: {eq: "terminalContents"}}) {
@@ -35,6 +35,6 @@ function TerminalComponent() {
             </div>
         </div>
     );
-};
+});
 
 export default TerminalComponent;
