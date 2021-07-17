@@ -6,7 +6,7 @@ import { motion, useAnimation } from 'framer-motion';
 
 import { data as langData } from './langTranslates';
 
-const randomGesser = (max) => {
+const randomGuesser = (max) => {
     return Math.floor(Math.random() * max);
 }
 
@@ -16,7 +16,7 @@ const LanguageBox = memo(() => {
     });
     const animationControls = useAnimation();
     const [ animatedIn, setAnimatedIn ] = useState(false);
-    const [ langDataIndex ] = useState(randomGesser(langData.length));
+    const [ langDataIndex ] = useState(randomGuesser(langData.length));
 
     const reciversVarients = {
         visible: i => ({

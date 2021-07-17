@@ -2,7 +2,9 @@ import React, { memo } from 'react';
 import * as classes from './terminal.module.scss';
 import { useStaticQuery, graphql } from 'gatsby';
 
-const randomizer = (inputArr) => inputArr[Math.floor(Math.random() * inputArr.length)];
+const randomGuesser = (max) => {
+    return Math.floor(Math.random() * max);
+}
 
 const TerminalComponent = memo(() => {
     const data = useStaticQuery(graphql`
@@ -16,7 +18,6 @@ const TerminalComponent = memo(() => {
             }
         }
     `);
-    randomizer(data.allFile.nodes);
 
 
     return (
@@ -30,7 +31,9 @@ const TerminalComponent = memo(() => {
                     </div>
                     <div className={ classes.title }>amir4rab</div>
                 </div>
-                <div className={ classes.body } dangerouslySetInnerHTML={{ __html: randomizer(data.allFile.nodes).childMarkdownRemark.html }}>
+                <div 
+                    className={ classes.body } 
+                    dangerouslySetInnerHTML={{ __html: data.allFile.nodes[randomGuesser(data.allFile.nodes.length)].childMarkdownRemark.html }}>
                 </div>
             </div>
         </div>
