@@ -1,0 +1,38 @@
+@import '../../scss/styles';
+
+.languageBox{
+    background: $black-1;
+    border-radius: 1.25rem 0 1.25rem 1.25rem;
+    height: 25vh;
+    position: relative;
+    .firstQuote, .secondQuote {
+        min-height: 2.5rem;
+        height: 2.5rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+
+        min-width: 25%;
+        padding: 0 1rem;
+
+        position: absolute;
+        transform: translate(0%, 150%);
+
+    }
+    .firstQuote {
+        background: $black-0;
+        top: calc(50% - 2rem - 1.75rem);
+        left: 10%;
+        border-radius: 0 1.25rem 1.25rem 1.25rem;
+
+    }
+    .secondQuote{
+        border-radius: 1.25rem 1.25rem 0 1.25rem;
+        color: $black-0;
+        background:  $acent-0;
+        top: calc(50% + 2rem - 1.75rem);
+        right: 10%;
+    }
+}
