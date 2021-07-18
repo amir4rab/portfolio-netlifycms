@@ -10,11 +10,17 @@ import "@fontsource/gothic-a1/600.css";
 import "../scss/globalStyle.scss";
 import "./layout.scss"
 
+//** importing components **/
+import IconLink from '../components/iconLink/iconLink';
+
 
 const Layout = ({ children }) => {
     return (
         <main className='layout'>
             <nav className="navbar">
+                <div>
+                    <IconLink />
+                </div>
                 <li>
                     <ul>
                         <Link activeClassName="activeLink" to="/">Home</Link>
