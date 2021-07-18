@@ -1,0 +1,11 @@
+@import '../../scss/styles';
+
+.projects{
+    .footer{
+        padding: 7.5vh 0 10vh 0;
+        border-top: .1rem solid transparentize( $white-0, .8 );
+        a{
+            color: $acent-0;
+        }
+    }
+}
