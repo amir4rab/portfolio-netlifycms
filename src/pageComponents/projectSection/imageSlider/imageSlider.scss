@@ -1,0 +1,71 @@
+@import '../../../scss/styles';
+
+.projectimageSlider {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+    flex-direction: row-reverse;
+    width: 100%;
+    height: 100%;
+    
+    .indicators{
+        // margin: 0 auto;
+        height: 100%;
+        min-height: 100%;
+        width: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        flex-direction: column;
+        .indicator{
+            padding: 0;
+            width: .75rem;
+            height: .75rem;
+            opacity: .5;
+            background: $white-0;
+            &:not(:last-child){
+                margin-bottom: .5rem;
+            }
+            &:hover{
+                cursor: pointer;
+            }
+            &:hover, &:focus {
+                opacity: .75;
+            }
+            &:active{
+                opacity: 1;
+            }
+            &.active{
+                opacity: 1;
+                height: 1.5rem;
+                background: $acent-0;
+                &:hover, &:focus {
+                    opacity: 1;
+                    cursor: default
+                }
+            }
+        }
+    }
+    
+    .inner {
+        width: 90%;
+        height: 100%;
+        position: relative;
+        .imageWrapper{
+            max-width: 30vw;
+            height: 100%;
+            position: absolute;
+            img{
+                max-height: 60vh;
+                max-width: 20vw;
+                border-radius: 1rem;
+                overflow: hidden;
+            }
+    
+            top: calc( 50% - 30vh);
+            left: calc( 50% - 5vw );
+        }
+    }
+}
