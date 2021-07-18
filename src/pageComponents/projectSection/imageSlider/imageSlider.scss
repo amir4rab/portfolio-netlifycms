@@ -25,6 +25,10 @@
             height: .75rem;
             opacity: .5;
             background: $white-0;
+            transition: 
+                background-color .1s ease-in-out,
+                height .1s ease-in-out;
+                
             &:not(:last-child){
                 margin-bottom: .5rem;
             }

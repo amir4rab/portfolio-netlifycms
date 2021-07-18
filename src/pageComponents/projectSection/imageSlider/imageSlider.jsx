@@ -12,11 +12,23 @@ const imagesVarinets = {
         opacity: 1,
         scale: 1
     },
+    goOnTop: {
+        x: [ -75, 10, 0],
+        zIndex: 50,
+        opacity: 1,
+        scale: 1,
+        transition: {
+            duration: .3
+        }
+    },
     onBack: {
-        x: -75,
+        x: [ 0, -85, -75],
         zIndex: 15,
-        scale: .9,
-        opacity: .9
+        scale: .8,
+        opacity: .9,
+        transition: {
+            duration: .3
+        }
     },
     hidden: {
         opacity: 0
@@ -45,26 +57,27 @@ const addIdToArray = (arr) => arr.map(( arrItem, i ) => ({
 function ImageSlider({ imagesArr }) {
     const [ activeIndex, setActiveIndex ] = useState(0);
     const [ dataArr ] = useState(addIdToArray(imagesArr));
-    const [ animatedIn, setAnimatedIn ] = useState(false);
-
-    // const imageOneControls = useAnimation();
-    // const imageTwoControls = useAnimation();
     const mainControls = useAnimation();
 
     const { ref, inView } = useInView({
-        threshold: .5
+        threshold: .5,
+        triggerOnce: true
     })
-
-
     useEffect( _ => {
-        if ( animatedIn ) return;
         if ( inView ) {
             mainControls.start('visible');
-            setAnimatedIn(true);
         } else {
             mainControls.start('hidden');
         }
-    },[ setAnimatedIn, dataArr, inView, mainControls, animatedIn ])
+    },[ dataArr, inView, mainControls ])
+
+    useEffect( _ => {
+        if ( inView ) {
+            mainControls.start('initial');
+        } else {
+            mainControls.start('hidden');
+        }
+    },[ dataArr, inView, mainControls ])
 
     return (
         <div ref={ ref } className='projectimageSlider'>
@@ -99,7 +112,7 @@ function ImageSlider({ imagesArr }) {
                             className='imageWrapper'
                             key={ data.id }
                             inital="hidden"
-                            animate={ activeIndex === data.index ? 'onTop' : 'onBack' }
+                            animate={ !inView ? 'hidden' : activeIndex === data.index ? 'goOnTop' : 'onBack' }
                             variants={ imagesVarinets }
                         >
                             <GatsbyImage image={ data.image } alt='image' />
