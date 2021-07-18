@@ -1,11 +1,8 @@
 import React from 'react';
+import ProjectsComponent from '../pageComponents/projects/projects';
 
 function ProjectsPage() {
-    return (
-        <div>
-            Projects
-        </div>
-    );
+    return <ProjectsComponent />;
 };
 
 export default ProjectsPage;

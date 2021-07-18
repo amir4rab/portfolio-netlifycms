@@ -1,0 +1,41 @@
+@import '../../scss/styles';
+
+.projectSection {
+    min-height: 100vh;
+    padding: 15vh 0;
+
+    &:first-of-type{
+        min-height: 90vh;
+        padding: 5vh 0 15vh 0;
+    }
+
+    display: flex;
+
+    .details{
+        min-height: 100%;
+        width: 50%;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        .title{
+            font-size: 2.5rem;
+            color: $acent-0;
+            padding-bottom: 2rem;
+        }
+        .about{
+            font-size: 1rem;
+            flex-grow: 1;
+            height: 100%;
+        }
+        .links{
+            .link{
+                color: $acent-0;
+                margin-left: 2rem;
+            }
+        }
+    }
+    .sliderSection{
+        width: 50%;
+        min-height: 100%;
+    }
+}
