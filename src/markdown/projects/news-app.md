@@ -1,6 +1,7 @@
 ---
 layout: Project
 title: News App
+slug: news-app
 date: 2021-07-12T08:32:03.392Z
 thumbnail: ../../images/uploads/news-app-browser0.png
 imagesGallery:

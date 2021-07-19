@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
+    siteUrl: "https://www.amir4rab.com",
     title: "portfolio",
   },
   plugins: [
@@ -18,7 +18,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: `${__dirname}/src/images/icon.png`,
+        icon: `${__dirname}/src/images/icon.svg`,
       },
     },
     "gatsby-plugin-sharp",

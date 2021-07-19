@@ -1,6 +1,7 @@
 ---
 layout: Project
 title: React web app
+slug: react-web-app
 date: 2021-07-12T09:15:49.655Z
 thumbnail: ../../images/uploads/weather-app-browser0.png
 imagesGallery:
