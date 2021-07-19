@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import * as classes from './projects.module.scss';
 
-import ProjectSection from '../projectSection/projectSection';
+import ProjectSection from '../../components/projectSection/projectSection';
 
 function ProjectsComponent() {
     const data = useStaticQuery(graphql`

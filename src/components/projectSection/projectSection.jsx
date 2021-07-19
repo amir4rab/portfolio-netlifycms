@@ -4,8 +4,8 @@ import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 import * as classes from './projectSection.module.scss';
-import ButtonSecondary from '../../components/buttons/buttonSecondry';
-import ImageSlider from './imageSlider/imageSlider';
+import ButtonSecondary from '../buttons/buttonSecondry';
+import ImageSlider from '../imagesSlider/imageSlider';
 
 const titleVarients = {
     visible: {
