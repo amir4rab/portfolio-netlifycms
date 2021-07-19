@@ -1,0 +1,67 @@
+@import '../../scss/styles';
+
+.websiteProject {
+    padding: 5vh 0;
+    .heroImg{
+        width: 100%;
+    }
+    .title{
+        font-size: 3rem;
+        padding: 7.5vh 0 15vh 0;
+        color: $acent-0;
+    }
+    .about{
+        display: flex;
+        justify-content: space-between;
+        min-height: 65vh;
+        .text{
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            .subTitle{
+                font-size: 1.5rem;
+                padding-bottom: 1.5rem;
+            }
+            .textArea{
+                flex-grow: 1;
+            }
+            .Buttons{
+                button{
+                    background-color: $black-1;
+                    // color: $acent-0;
+                    margin-right: 1rem;
+                    font-size: 1rem;
+                    a{
+                        text-decoration: none;
+                    }
+                }
+                a{
+                    color: $acent-0;
+                    text-decoration: underline;
+                }
+            }
+            width: 40%;
+        }
+        .imgSlider{
+            width: 60%;
+        }
+    }
+    .tagsSection{
+        padding: 5vh 0;
+        .tagsTitle{
+            padding-bottom: 1.5rem;
+            font-weight: 400;
+        }
+        .tags{
+            display: flex;
+            .tag {
+                a {
+                    color: $acent-0;
+                }
+                &:not(:last-child){
+                    margin-right: 1rem;
+                }
+            }
+        }
+    }
+}
