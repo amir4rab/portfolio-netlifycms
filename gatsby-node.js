@@ -28,6 +28,9 @@ exports.createPages = async ({ graphql, actions }) => {
         createPage({
             path: `projects/${edge.node.childMarkdownRemark.frontmatter.slug}`,
             component: websiteProjectTemplate,
+            context: {
+                slug: edge.node.childMarkdownRemark.frontmatter.slug,
+            },
         })
     })
 }

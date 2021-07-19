@@ -90,8 +90,6 @@ const WebsiteProject = ({ data }) => {
     const [ titleRef, titleInView ] = useInView( intersectionObserverSettings );
     const [ aboutRef, aboutInView ] = useInView( intersectionObserverSettings );
 
-    console.log(heroInView)
-
     return (
         <div className={ classes.websiteProject }>
             <motion.div
