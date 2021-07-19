@@ -17,6 +17,7 @@ function ProjectsSlider() {
                     childMarkdownRemark {
                         frontmatter {
                             title
+                            slug
                             imagesGallery {
                                 childImageSharp {
                                     gatsbyImageData

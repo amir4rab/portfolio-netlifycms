@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import * as classes from './projectSlide.module.scss';
 import { motion, useAnimation } from 'framer-motion';
-// import { Link } from 'gatsby';
+import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import ButtonSecondary from '../../buttons/buttonSecondry';
 
@@ -65,9 +65,11 @@ function ProjectSlide({ data, isActive }) {
                 }
             </motion.div>
             <motion.div animate={ animationControls } initial={ 'hidden' } variants={buttonAnimationsVarients} className={ classes.btn }>
-                <ButtonSecondary>
-                    Go to Project
-                </ButtonSecondary>
+                <Link to={`/projects/${data.slug}`}>               
+                    <ButtonSecondary>
+                        Go to Project
+                    </ButtonSecondary>
+                </Link>
             </motion.div>
         </div>
     );

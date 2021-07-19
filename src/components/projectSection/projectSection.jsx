@@ -96,7 +96,7 @@ function ProjectSection({ data }) {
                             Go to project
                         </ButtonSecondary>
                     </a>
-                    <Link className={ classes.link } to='/'>
+                    <Link className={ classes.link } to={`/projects/${data.frontmatter.slug}`}>
                         Or learn more about this project.
                     </Link>
                 </motion.div>

@@ -18,6 +18,7 @@ function ProjectsComponent() {
                             title
                             websiteAddress
                             github
+                            slug
                             imagesGallery {
                                 childImageSharp {
                                     gatsbyImageData
