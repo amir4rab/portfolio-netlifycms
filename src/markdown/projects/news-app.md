@@ -13,6 +13,5 @@ websiteAddress: https://newsapp-amir4rab.netlify.app/
 tags:
   - angular
   - firebase
-  - ""
 ---
 a simple news app developed with Angular.
