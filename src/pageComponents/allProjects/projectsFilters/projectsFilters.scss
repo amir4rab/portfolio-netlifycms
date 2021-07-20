@@ -1,0 +1,34 @@
+@import '../../../scss/styles';
+
+.filtersDiv{
+    padding: 1.5rem 0;
+    &_title{
+        padding-bottom: 1rem;
+    }
+    &_wrapper{
+        .filter{
+            &:not(:last-child){
+                margin-right: .75rem;
+            }
+            background: $black-1;
+            color: $acent-0;
+            transition: 
+                background-color .1s ease-in-out,
+                color .1s ease-in-ou;
+            &:hover{
+                cursor: pointer;
+            }
+            &:hover, &:focus{
+                background-color: darken( $black-1, 5 );
+            }
+            &:active{
+                background-color: $acent-0;
+                color: $black-1;
+            }
+            &.acive{
+                background-color: $acent-0;
+                color: $black-1;
+            }
+        }
+    }
+}
