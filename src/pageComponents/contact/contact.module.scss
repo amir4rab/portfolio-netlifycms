@@ -1,0 +1,30 @@
+@import '../../scss/styles';
+
+.contactComponent{
+    .title{
+        color: $acent-0;
+        font-size: 3rem;
+        padding-bottom: 2rem;
+    }
+    .section{
+        padding: 5vh 0;
+        .subTitle{
+            font-size: 2rem;
+            padding-bottom: 1rem;
+            font-weight: 400;
+        }
+        .socialLinks{
+            display: flex;
+            justify-content: center;
+            .socialLinkItem {
+                img {
+                    width: 2rem;
+                    height: 2rem;
+                }
+                &:not(:last-child){
+                    margin-right: 1rem;
+                }
+            }
+        }
+    }
+}
