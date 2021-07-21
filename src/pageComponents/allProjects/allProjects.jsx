@@ -73,7 +73,7 @@ const AllProjectsComponent = ({ location }) => {
             }
         }
     `);
-    const [ activeFilters, setActiveFilters] = useState( location.state === null ? [] : [location.state.preSelectedTag]);
+    const [ activeFilters, setActiveFilters] = useState( location.state === undefined || location.state === null ? [] : [location.state.preSelectedTag]);
 
     const [ tilteRef, titleInView ] = useInView(intersectionObserverSettings);
 
