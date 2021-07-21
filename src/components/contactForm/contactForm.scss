@@ -1,0 +1,73 @@
+@import '../../scss/styles';
+
+.formComponent {
+    width: 700px;
+    margin: 0 auto;
+    position: relative;
+
+    .row{
+        display: flex;
+        .inputGroup:not(:last-child){
+            margin-right: .5rem;
+        }
+        .inputGroup:last-child{
+            margin-left: .5rem;
+        }
+    }
+
+    .loadingElement {
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-top: .5rem solid $acent-0;
+        border-bottom: .25rem solid transparent;
+        border-left: .25rem solid transparent;
+        border-right: .25rem solid transparent;
+        border-radius: 50%;
+
+        @keyframes rotaiter {
+            from {
+                transform: rotateZ(0deg);
+            }
+            to {
+                transform: rotateZ(360deg);
+            }
+        }
+        animation: rotaiter .6s ease-in-out forwards infinite;
+    }
+
+    .inputGroup {
+        width: 100%;
+        padding: 1rem 0;
+        p{
+            padding-bottom: .75rem;
+        }
+        textarea{
+            min-height: 7.5vh;
+        }
+        input, textarea{
+            border-radius: .5rem;
+            width: 100%;
+            padding: .25rem 1rem;
+            font-size: 1rem;
+
+            background-color: $black-1;
+            border: transparent .1rem solid;
+            color: $white-0;
+
+            transition: border-color .1s ease-in-out;
+
+            &:focus{
+                border-color: $acent-0;
+                outline: none;
+            }
+        }
+    }
+    .buttons{
+        display: flex;
+        justify-content: flex-end;
+    }
+}
