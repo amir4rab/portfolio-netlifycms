@@ -38,6 +38,17 @@
                     object-fit: contain;
                     margin-right: .75rem;
                 }
+                a{
+                    color: $white-0;
+                    text-decoration: none;
+                    transition: color .1s ease-in-out;
+                    &:hover, &:focus{
+                        color: darken( $white-0, 15 );
+                    }
+                    &:active{
+                        color: darken( $white-0, 25 );
+                    }
+                }
             }
         }
     }

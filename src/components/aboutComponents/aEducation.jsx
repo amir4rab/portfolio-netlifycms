@@ -44,7 +44,7 @@ function AEducation() {
                         custom={ 1 }
                         className={ classes.detail }>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias architecto ducimus ipsa excepturi totam rerum nesciunt sit! Vel nostrum cupiditate, cumque culpa maxime fugit ex, quidem error, nisi voluptas perspiciatis.
+                            Currently studying Computer engineering in IAU.
                         </p>
                     </motion.div>
                 </div>

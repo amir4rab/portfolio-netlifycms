@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import TerminalComponent from '../terminal/terminal';
-
-import reactIcon from '../../images/icons/colored/react.svg';
-import javascript from '../../images/icons/colored/javascript.svg';
-import gatsby from '../../images/icons/colored/gatsby.svg';
+import { Link } from 'gatsby';
 
 import { titleVarients, textsVarients, heroVarients } from './framerMotionVarients';
 import { useInView } from 'react-intersection-observer';
 import { motion, useAnimation } from 'framer-motion';
+
+import reactLogo from '../../images/icons/colored/react.svg';
+import javascriptLogo from '../../images/icons/colored/javascript.svg';
+import gatsbyLogo from '../../images/icons/colored/gatsby.svg';
+
+import TerminalComponent from '../terminal/terminal';
 
 import * as classes from './about.module.scss';
 
@@ -49,27 +51,51 @@ function AProgramming() {
                         variants={ textsVarients }
                         initial='hidden'
                         custom={ 1 }
-                        className={ classes.detail }>
-                        <img src={reactIcon} alt='react icon'/>
-                        <p>React</p>
+                        className={ classes.detail }
+                    >
+                        <img src={reactLogo} alt='react icon'/>
+                        <Link
+                            to='/allprojects'
+                            state={{
+                                preSelectedTag: 'react'
+                            }}
+                        >
+                            React
+                        </Link>
                     </motion.div>
                     <motion.div 
                         animate={ animationControls } 
                         variants={ textsVarients }
                         initial='hidden'
                         custom={ 2 }
-                        className={ classes.detail }>
-                        <img src={gatsby} alt='gatsby icon'/>
-                        <p>Gatsby</p>
+                        className={ classes.detail }
+                    >
+                        <img src={gatsbyLogo} alt='gatsby icon'/>
+                        <Link
+                            to='/allprojects'
+                            state={{
+                                preSelectedTag: 'gatsby'
+                            }}
+                        >
+                            Gatsby
+                        </Link>
                     </motion.div>
                     <motion.div 
                         animate={ animationControls } 
                         variants={ textsVarients }
                         initial='hidden'
                         custom={ 3 }
-                        className={ classes.detail }>
-                        <img src={javascript} alt='javascript icon'/>
-                        <p>Javascript</p>
+                        className={ classes.detail }
+                    >
+                        <img src={javascriptLogo} alt='javascript icon'/>
+                        <Link
+                            to='/allprojects'
+                            state={{
+                                preSelectedTag: 'react'
+                            }}
+                        >
+                            Javascript
+                        </Link>
                     </motion.div>
                 </div>
             </div>
