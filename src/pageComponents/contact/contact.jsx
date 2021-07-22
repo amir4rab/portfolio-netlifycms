@@ -18,10 +18,39 @@ const titleVariants = {
     visible: {
         opacity: 1,
         x: 0,
-        transiton: {
+        transition: {
             duration: .3
         }
     }
+}
+
+const subtitleVariants = {
+    hidden: {
+        opacity: 0,
+        y: -10,
+    },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: .3
+        }
+    }
+}
+
+const linkVariants = {
+    hidden: {
+        opacity: 0,
+        x: -15,
+    },
+    visible: i => ({
+        opacity: 1,
+        x: 0,
+        transition: {
+            duration: .3,
+            delay: (.3 * i)
+        }
+    })
 }
 
 function ContactComponent() {
@@ -41,31 +70,59 @@ function ContactComponent() {
                 Contact
             </motion.h1>
             <div className={ classes.section }>
-                <h3 className={ classes.subTitle }>
+                <motion.h3 
+                    className={ classes.subTitle }
+                    variants={ subtitleVariants }
+                    initial='hidden'
+                    animate={ inView ? 'visible' : 'hidden' }
+                >
                     socials
-                </h3>
+                </motion.h3>
                 <div className={ classes.socialLinks }>
-                    <div className={ classes.socialLinkItem }>
+                    <motion.div 
+                        className={ classes.socialLinkItem }
+                        variants={ linkVariants }
+                        custom={ 0 }
+                        initial='hidden'
+                        animate={ inView ? 'visible' : 'hidden' }
+                    >
                         <SocialLink href='https://github.com/amir4rab'>
                             <img src={ githubLogo } alt="github" />
                         </SocialLink>
-                    </div>
-                    <div className={ classes.socialLinkItem }>
+                    </motion.div>
+                    <motion.div 
+                        className={ classes.socialLinkItem }
+                        variants={ linkVariants }
+                        custom={ 1 }
+                        initial='hidden'
+                        animate={ inView ? 'visible' : 'hidden' }
+                    >
                         <SocialLink href='https://twitter.com/amir4rab'>
                             <img src={ twitterLogo } alt="twitter" />
                         </SocialLink>
-                    </div>
-                    <div className={ classes.socialLinkItem }>
+                    </motion.div>
+                    <motion.div 
+                        className={ classes.socialLinkItem }
+                        variants={ linkVariants }
+                        custom={ 2 }
+                        initial='hidden'
+                        animate={ inView ? 'visible' : 'hidden' }
+                    >
                         <SocialLink href='https://codesandbox.io/u/amir4rab'>
                             <img src={ codesandboxLogo } alt="codesandbox" />
                         </SocialLink>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
             <div className={ classes.section }>
-                <h3 className={ classes.subTitle }>
+                <motion.h3 
+                    className={ classes.subTitle }
+                    variants={ subtitleVariants }
+                    initial='hidden'
+                    animate={ inView ? 'visible' : 'hidden' }
+                >
                     contact form
-                </h3>
+                </motion.h3>
                 <ContactForm inView={ inView } />
             </div>
         </div>
