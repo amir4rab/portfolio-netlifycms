@@ -1,5 +1,6 @@
 ---
 layout: Blog
+slug: installing-npm-on-linux-systems
 title: Installing npm on linux systems
 date: 2021-07-21T13:30:19.785Z
 thumbnail: ../../images/uploads/linuxmint-npm-nodejs.jpg
