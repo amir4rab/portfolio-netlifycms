@@ -1,11 +1,8 @@
 import React from 'react'
+import BlogComponent from '../pageComponents/blog/blog'
 
 function BlogPage() {
-    return (
-        <div>
-            blog
-        </div>
-    )
+    return <BlogComponent />
 }
 
 export default BlogPage

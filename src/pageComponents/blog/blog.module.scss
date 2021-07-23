@@ -1,0 +1,14 @@
+@import '../../scss/styles';
+
+.blogComponent{
+    .title{
+        font-size: 3rem;
+        color: $acent-0;
+        padding-bottom: 2rem;
+    }
+    .blogItems{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
