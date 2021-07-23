@@ -6,9 +6,12 @@ exports.onPostBuild = ({ reporter }) => {
 
 // Create blog pages dynamically
 exports.createPages = async ({ graphql, actions }) => {
-    const { createPage } = actions
-    const websiteProjectTemplate = path.resolve(`src/templates/websiteProject/websiteProject.jsx`)
-    const result = await graphql(`
+    const { createPage } = actions;
+
+    const websiteProjectTemplate = path.resolve(`src/templates/websiteProject/websiteProject.jsx`);
+    const blogTemplate = path.resolve(`src/templates/blog/blogTemplate.jsx`);
+
+    const projects = graphql(`
         query ProjectsQueryForNodeCreation {
             allFile(filter: {sourceInstanceName: {eq: "projects"}}) {
                 edges {
@@ -23,14 +26,43 @@ exports.createPages = async ({ graphql, actions }) => {
                 }
             }
         }
-    `)
-    result.data.allFile.edges.forEach(edge => {
-        createPage({
-            path: `projects/${edge.node.childMarkdownRemark.frontmatter.slug}`,
-            component: websiteProjectTemplate,
-            context: {
-                slug: edge.node.childMarkdownRemark.frontmatter.slug,
-            },
+    `).then( result => {
+        result.data.allFile.edges.forEach(edge => {
+            createPage({
+                path: `projects/${edge.node.childMarkdownRemark.frontmatter.slug}`,
+                component: websiteProjectTemplate,
+                context: {
+                    slug: edge.node.childMarkdownRemark.frontmatter.slug,
+                },
+            })
         })
-    })
+    });
+
+    const blogs = graphql(`
+        query FetchBlogsForBlogComponent {
+            allFile(filter: {sourceInstanceName: {eq: "blogs"}}) {
+                edges {
+                    node {
+                        childMarkdownRemark {
+                            frontmatter {
+                                slug
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    `).then( result => {
+        result.data.allFile.edges.forEach(edge => {
+            createPage({
+                path: `blog/${edge.node.childMarkdownRemark.frontmatter.slug}`,
+                component: blogTemplate,
+                context: {
+                    slug: edge.node.childMarkdownRemark.frontmatter.slug,
+                },
+            })
+        })
+    });
+
+    return Promise.all([ projects, blogs ]);
 }

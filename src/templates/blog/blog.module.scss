@@ -1,0 +1,23 @@
+@import '../../scss/styles';
+
+.blogTemplate {
+    .image {
+        display: block;
+    }
+    .details {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        .title {
+            font-size: 3rem;
+            font-weight: 600;
+            color: $acent-0;
+        }
+        .date {
+            color: $white-0;
+            opacity: .75;
+        }
+        margin-bottom: 2.5rem;
+    }
+}
