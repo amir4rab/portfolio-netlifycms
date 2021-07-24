@@ -1,6 +1,7 @@
 @import '../../scss/styles';
 
 .contactComponent{
+    padding: 10vh 0;
     .title{
         color: $acent-0;
         font-size: 3rem;
@@ -26,5 +27,11 @@
                 }
             }
         }
+    }
+}
+
+@include for-desktop-up {
+    .contactComponent{
+        padding: 0;
     }
 }

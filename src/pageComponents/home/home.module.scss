@@ -1,15 +1,9 @@
 @import '../../scss/styles';
 
 .homeComponent{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
     padding: 5vh 0;
     height: 90vh;
     .details{
-        width: 50%;
-        max-width: 50%;
         height: 100%;
         display: flex;
         justify-content: space-between;
@@ -18,9 +12,9 @@
         flex-direction: column;
         .about{
             .title{
-                font-size: 4rem;
+                font-size: 2.5rem;
                 line-height: 125%;
-                padding-bottom: 2rem;
+                padding-bottom: 5vh;
                 strong {
                     color: $acent-0;
                     font-weight: block;
@@ -29,7 +23,8 @@
         }
         .links{
             display: flex;
-            justify-content: flex-start;
+            width: 100%;
+            justify-content: center;
             align-items: center;
             align-content: center;
             .link{
@@ -44,7 +39,34 @@
         }
     }
     .projectSliderDiv{
-        width: 50%;
-        height: 100%;
+        display: none;
+    }
+}
+
+@include for-desktop-up {
+    .homeComponent{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        .details{
+            width: 50%;
+            max-width: 50%;
+            height: 100%;
+            .about{
+                .title{
+                    font-size: 4rem;
+                    padding-bottom: 2rem;
+                }
+            }
+            .links{
+                justify-content: flex-start;
+            }
+        }
+        .projectSliderDiv{
+            display: block;
+            width: 50%;
+            height: 100%;
+        }
     }
 }

@@ -1,7 +1,7 @@
 @import '../../scss/styles';
 
 .blogItem {
-    max-width: calc(50% - 1.25vw);
+    max-width: 100%;
     padding: 1rem;
     border-radius: .4rem;
     margin-bottom: 2.5vw;
@@ -29,5 +29,11 @@
     .date{
         opacity: .75;
         font-size: .8rem;
+    }
+}
+
+@include for-desktop-up {
+    .blogItem {
+        max-width: calc(50% - 1.25vw);
     }
 }

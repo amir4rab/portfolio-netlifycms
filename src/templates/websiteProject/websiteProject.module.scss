@@ -1,20 +1,21 @@
 @import '../../scss/styles';
 
 .websiteProject {
-    padding: 5vh 0;
+    padding: 2.5vh 0 10vh 0;
     .heroImg{
         width: 100%;
     }
     .title{
-        font-size: 3rem;
-        padding: 7.5vh 0 15vh 0;
+        font-size: 2.5rem;
+        padding: 1rem 0;
         color: $acent-0;
     }
     .about{
         display: flex;
         justify-content: space-between;
-        min-height: 65vh;
+        min-height: 35vh;
         .text{
+            width: 100%;
             display: flex;
             justify-content: flex-start;
             flex-direction: column;
@@ -40,10 +41,9 @@
                     text-decoration: underline;
                 }
             }
-            width: 40%;
         }
         .imgSlider{
-            width: 60%;
+            display: none;
         }
     }
     .tagsSection{
@@ -61,6 +61,26 @@
                 &:not(:last-child){
                     margin-right: 1rem;
                 }
+            }
+        }
+    }
+}
+
+@include for-desktop-up {
+    .websiteProject {
+        padding: 5vh 0;
+        .title{
+            font-size: 3rem;
+            padding: 7.5vh 0 15vh 0;
+        }
+        .about{
+            min-height: 65vh;
+            .text{
+                width: 40%;
+            }
+            .imgSlider{
+                width: 60%;
+                display: block;
             }
         }
     }

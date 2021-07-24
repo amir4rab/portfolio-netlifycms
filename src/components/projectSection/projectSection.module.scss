@@ -2,20 +2,13 @@
 
 .projectSection {
     min-height: 100vh;
-    padding: 15vh 0;
-
-    &:first-of-type{
-        min-height: 90vh;
-        padding: 5vh 0 15vh 0;
-    }
-
-    display: flex;
 
     .details{
-        min-height: 100%;
-        width: 50%;
+        min-height: 100vh;
+        padding: 15vh 0;
+        width: 100%;
         display: flex;
-        justify-content: flex-start;
+        justify-content: space-between;
         flex-direction: column;
         .title{
             font-size: 2.5rem;
@@ -29,13 +22,47 @@
         }
         .links{
             .link{
+                display: block;
                 color: $acent-0;
-                margin-left: 2rem;
+                padding-top: 1.5rem;
             }
         }
     }
     .sliderSection{
-        width: 50%;
-        min-height: 100%;
+        display: none;
+    }
+}
+
+@include for-desktop-up {
+    .projectSection {
+        padding: 15vh 0;
+
+        &:first-of-type{
+            min-height: 90vh;
+            padding: 5vh 0 15vh 0;
+        }
+
+        display: flex;
+
+        .details{
+            min-height: 100%;
+            width: 50%;
+            padding: 0;
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            .links{
+                .link{
+                    display: inline;
+                    padding-top: 0;
+                    margin-left: 2rem;
+                }
+            }
+        }
+        .sliderSection{
+            display: block;
+            width: 50%;
+            min-height: 100%;
+        }
     }
 }

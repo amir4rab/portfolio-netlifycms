@@ -1,7 +1,7 @@
 @import '../../../scss/styles';
 
 .filtersDiv{
-    padding: 1.5rem 0;
+    padding: .5rem 0;
     &_title{
         padding-bottom: 1rem;
     }
@@ -10,6 +10,7 @@
             &:not(:last-child){
                 margin-right: .75rem;
             }
+            margin-bottom: .75rem;
             background: $black-1;
             color: $acent-0;
             transition: 
@@ -28,6 +29,17 @@
             &.acive{
                 background-color: $acent-0;
                 color: $black-1;
+            }
+        }
+    }
+}
+
+@include for-desktop-up {
+    .filtersDiv{
+        padding: 1.5rem 0;
+        &_wrapper{
+            .filter{
+                margin-bottom: 0;
             }
         }
     }

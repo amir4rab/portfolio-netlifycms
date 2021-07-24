@@ -1,23 +1,17 @@
 @import '../../scss/styles';
 
 .formComponent {
-    width: 700px;
+    width: 85%;
     margin: 0 auto;
     position: relative;
 
     .row{
-        display: flex;
-        .inputGroup:not(:last-child){
-            margin-right: .5rem;
-        }
-        .inputGroup:last-child{
-            margin-left: .5rem;
-        }
+        display: block;
     }
 
     .loadingElement {
-        width: 150px;
-        height: 150px;
+        width: 100px;
+        height: 100px;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -30,10 +24,10 @@
 
         @keyframes rotaiter {
             from {
-                transform: rotateZ(0deg);
+                transform: translate(-50%, -50%) rotateZ(0deg);
             }
             to {
-                transform: rotateZ(360deg);
+                transform: translate(-50%, -50%) rotateZ(360deg);
             }
         }
         animation: rotaiter .6s ease-in-out forwards infinite;
@@ -47,6 +41,7 @@
         }
         textarea{
             min-height: 7.5vh;
+            resize: none;
         }
         input, textarea{
             border-radius: .5rem;
@@ -69,5 +64,26 @@
     .buttons{
         display: flex;
         justify-content: flex-end;
+    }
+}
+
+@include for-desktop-up {
+    .formComponent {
+        width: 700px;
+    
+        .row{
+            display: flex;
+            .inputGroup:not(:last-child){
+                margin-right: .5rem;
+            }
+            .inputGroup:last-child{
+                margin-left: .5rem;
+            }
+        }
+
+        .loadingElement {
+            width: 250px;
+            height: 250px;
+        }
     }
 }

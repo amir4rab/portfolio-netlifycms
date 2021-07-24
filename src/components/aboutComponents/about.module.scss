@@ -1,25 +1,17 @@
 @import '../../scss/styles';
 
 .aboutSection {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    align-content: flex-start;
-    padding: 20vh 0;
+    padding: 10vh 0;
     min-height: 100vh;
-    &:first-of-type {
-        padding: 10vh 0;
-        min-height: 90vh;
-    }
     .details {
-        width: 60%;
+        width: 100%;
         .title {
             color: $acent-0;
-            font-size: 3rem;
+            font-size: 2rem;
             padding-bottom: .5rem;
         }
         .subTitle {
-            font-size: 1.25rem;
+            font-size: 1rem;
             color: $white-0;
             opacity: .75;
         }
@@ -53,11 +45,37 @@
         }
     }
     .hero {
-        // padding-top: 10vh;
-        width: 40%;
-        height: 100%;
-        .heroImg {
-            width: 100%;
+        display: none;
+    }
+}
+
+@include for-desktop-up {
+    .aboutSection {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        align-content: flex-start;
+        padding: 20vh 0;
+        &:first-of-type {
+            padding: 10vh 0;
+            min-height: 90vh;
+        }
+        .details {
+            width: 60%;
+            .title {
+                font-size: 3rem;
+            }
+            .subTitle {
+                font-size: 1.25rem;
+            }
+        }
+        .hero {
+            // padding-top: 10vh;
+            width: 40%;
+            height: 100%;
+            .heroImg {
+                width: 100%;
+            }
         }
     }
 }
