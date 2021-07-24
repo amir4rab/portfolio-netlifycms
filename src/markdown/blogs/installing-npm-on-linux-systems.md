@@ -45,4 +45,4 @@ in my opinion, the bast way to install Node Js and Npm on Linux and Mac Os syste
    > nvm install node
    > ```
 
-every thing should be ready by now, for more information please check nvm [GitHub](https://github.com/nvm-sh/nvm).
+every thing should be ready by now, for more information please check nvms [GitHub](https://github.com/nvm-sh/nvm).

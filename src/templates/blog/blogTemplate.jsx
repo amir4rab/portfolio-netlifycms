@@ -7,6 +7,9 @@ import './blogHtml.scss';
 
 function BlogTemplate({ data }) {
     const frontMatter = data.markdownRemark.frontmatter;
+    const date = new Date(frontMatter.date);
+
+    console.log(date)
 
     return (
         <div className={ classes.blogTemplate }>
@@ -16,9 +19,9 @@ function BlogTemplate({ data }) {
             <div className={ classes.details }>
                 <h1 className={ classes.title }>
                     { frontMatter.title }
-                </h1>
+                </h1> 
                 <p className={ classes.date }>
-                    { frontMatter.date }
+                    { `${date.getFullYear()} / ${date.getMonth()} / ${date.getDate()}` }
                 </p>
             </div>
             <div className='blogHtml' dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
