@@ -7,7 +7,7 @@ thumbnail: ../../images/uploads/weather-app-browser0.png
 imagesGallery:
   - ../../images/uploads/weather-app-mobile0.png
   - ../../images/uploads/weather-app-mobile1.png
-specialProject: true
+specialProject: false
 github: https://github.com/amir4rab/weather-app
 websiteAddress: https://amir4rab-weatherapp.netlify.app/
 tags:
