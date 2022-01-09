@@ -15,7 +15,7 @@ tags:
   - nextjs
   - next-auth
   - mongodb
-  - fullstak
+  - fullstack
   - framer-motion
 ---
 a simple full-stack, web application, developed with Nextjs and MongoDb, authorization has been done with Next-auth, by google as the authentication provider. users pages after generation, scored 95 on [web.dev](https://web.dev/measure/), lighthouse test. user's sign ups is turned off due to moderation reasons, if your are interested  in the project, you can contact me on twitter by [@amir4rab](https://twitter.com/amir4rab).
